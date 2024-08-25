@@ -1,0 +1,11 @@
+from flask import Flask
+
+def create_app():
+    app = Flask(__name__)
+
+    # Importar e registrar os blueprints
+    from .controllers.controller import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
+    return app
+
